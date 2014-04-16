@@ -26,8 +26,42 @@ Reset.cssやNormalize.cssなどを用いたブラウザのデフォルトスタ�
 
 ページを構成するヘッダーやメインのコンテンツエリア、サイドバーやフッターといったプロジェクト共通のコンテナーブロックのスタイルを定義します。
 
-*Note:*
-SMACSSにおけるLayoutレイヤーとは異なり、**Grid**などの汎用的なレイアウト機能を持つものは、後述する**Object/Compornent**レイヤーに属するものとします。
+基本的には、ページ単位で唯一の存在である要素となるため、Layoutレイヤーの要素ではIDセレクタを使うことを推奨します。
+IDセレクタはセレクタの詳細度を高めてしまうため、他のレイヤーやモジュールでは推奨しません。
+
+*Note:*  
+SMACSSにおけるLayoutでは、グリッドレイアウトのためのモジュールも含めます。
+FLOCSSでは、グリッドフレームワークとしての定義、具体的にはCSSプリプロセッサによるmixinやfunctionは、各所でincludeされることを考慮して、
+このレイヤーで扱うべきだと考えています。
+例えばそれらは、[Susy](http://susy.oddbird.net/)、[Bourbon Neat](http://neat.bourbon.io/)、[Kite](https://github.com/hiloki/kitecss)のようなレイアウトに関わるフレームワークです。
+
+しかし、これらをクラスとして扱う場合には、それらは Object/Componentレイヤーとして定義させるほうが、多くのレイアウト、グリッドフレームワークをFLOCSSに適用させやすいと考えています。
+（!運用の中でこのルールが変わる可能性は大きいです！）
+
+```css
+// Layout
+@mixin span-columns($coloums) {
+  ...
+}
+
+#header {
+  @include span-columns(12)
+}
+
+// Object/Component
+
+.c-grid {
+  @include outer-container;
+}
+
+.c-grid__cell {
+  @include pad();
+}
+
+.c-grid__cell--1 {
+  @include span-columns(1)
+}
+```
 
 ### Object
 
@@ -89,7 +123,7 @@ Objectレイヤーの中で分類されるモジュールに対し、役割を�
 - Project   - `.p-*`
 - Utility   - `.u-*`
 
-*Note:*
+*Note:*  
 これらの命名規則は、あなたのプロジェクトが持つオリジナルの命名規則に従い、キャメルケースなどを組み合わせたものでも構いませんが、必ず**命名に一貫性を保つ**ようにしてください。
 
 ## ファイル・ディレクトリ構成
@@ -491,3 +525,66 @@ FLOCSSでは、後ろのレイヤーになるほど具体的になり、カス�
   background-image: none;
 }
 ```
+
+## CSSプリプロセッサのExtend
+
+CSSプリプロセッサの多くが持つ、セレクタを継承するためのExtendは、原則そのモジュールで完結する継承以外では利用を禁止します。
+
+レイヤーやモジュールを超えてExtendによる継承をおこなった場合、FLOCSSの構成・設計は破綻し、カスケーディングルールも複雑にしてしまう可能性があるためです。
+
+以下は例外として、許容されるパターンをあげます。
+
+### モジュールで完結するExtend
+
+次のようなbuttonモジュールがあったとします。
+
+```scss
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+.button--primary {
+  background-color: #CCAA00;
+}
+```
+
+```html
+<a href="#save" class="button button--primary">Save</a>
+```
+
+FLOCSSの構想では、このようなマルチクラスパターンを基本としていますが、次のようなExtendによってシングルクラスにすることができます。
+
+```scss
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+.button--primary {
+  @extend .button
+  background-color: #CCAA00;
+  color: #FFFFFF;
+}
+.button--secondary {
+  @extend .button
+  background-color: #FFCC00;
+}
+
+// Compiled
+// .button,.button--primary {
+//   display: inline-block;
+//   padding: 0.5em 1em;
+//   cursor: pointer;
+// }
+// .button--primary {
+//   background-color: #CCAA00;
+// }
+```
+
+```html
+<a href="#save" class="button--primary">Save</a>
+```
+
+このようにモジュール内で完結をする限りは、管理が煩雑になりにくいため許容します。
+
