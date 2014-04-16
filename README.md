@@ -1,4 +1,4 @@
-![](https://s3-us-west-2.amazonaws.com/droplr.storage/files/acc_74102/xcPp?AWSAccessKeyId=AKIAJSVQN3Z4K7MT5U2A&Expires=1397640220&Signature=SlTT5ctf6q35IcY5%2Ffej1AXbJCg%3D&response-content-disposition=inline%3B%20filename%3Dflocstype.png%3B)
+![](https://s3-us-west-2.amazonaws.com/droplr.storage/files/acc_74102/cN2p?AWSAccessKeyId=AKIAJSVQN3Z4K7MT5U2A&Expires=1397640587&Signature=09JUK0O5WNjooioNzMPPlX8MHSo%3D&response-content-disposition=inline%3B%20filename%3Dflocs-type.png%3B)
 
 **FLOCSS（フロックス）**は、[OOCSS](https://github.com/stubbornella/oocss/wiki)や[SMACSS](https://smacss.com/ja)、[BEM](http://bem.info/)、[SuitCSS](http://suitcss.github.io/)のコンセプトを取り入れた、モジュラーなアプローチのためのCSS構成案です。  
 [MCSS](http://operatino.github.io/MCSS/ja/)のレイヤー構成にも大きな影響を受けています。
