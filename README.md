@@ -31,19 +31,20 @@ IDセレクタはセレクタの詳細度を高めてしまうため、他のレ
 
 *Note:*  
 SMACSSにおけるLayoutでは、グリッドレイアウトのためのモジュールも含めます。
-FLOCSSでは、グリッドフレームワークとしての定義、具体的にはCSSプリプロセッサによるmixinやfunctionは、各所でincludeされることを考慮して、
-このレイヤーで扱うべきだと考えています。
+FLOCSSでは、グリッドフレームワークとしての定義、具体的にはCSSプリプロセッサによるmixinやfunctionがある場合は、
+各所でincludeされることを考慮して、このFoundationレイヤーで扱うべきだと考えています。
 例えばそれらは、[Susy](http://susy.oddbird.net/)、[Bourbon Neat](http://neat.bourbon.io/)、[Kite](https://github.com/hiloki/kitecss)のようなレイアウトに関わるフレームワークです。
 
 しかし、これらをクラスとして扱う場合には、それらは Object/Componentレイヤーとして定義させるほうが、多くのレイアウト、グリッドフレームワークをFLOCSSに適用させやすいと考えています。
 （!運用の中でこのルールが変わる可能性は大きいです！）
 
 ```css
-// Layout
+// Foundation
 @mixin span-columns($coloums) {
   ...
 }
 
+// Layout
 #header {
   @include span-columns(12)
 }
