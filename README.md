@@ -64,7 +64,7 @@ FLOCSSでは、グリッドフレームワークとしての定義、具体的�
 
 ### Object
 
-OOCSSのコンセプトを元に、プロジェクトにおける繰り返されるビジュアルパターンをすべてx**Object**と定義します。
+OOCSSのコンセプトを元に、プロジェクトにおける繰り返されるビジュアルパターンをすべて**Object**と定義します。
 
 FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます。
 
@@ -291,10 +291,10 @@ body { … }
 // Component
 // -----------------------------------------------------------------
 
-@import "object/component/object/component/button";
-@import "object/component/dialog";
-@import "object/component/grid";
-@import "object/component/media";
+@import "object/component/_button";
+@import "object/component/_dialog";
+@import "object/component/_grid";
+@import "object/component/_media";
 
 // -----------------------------------------------------------------
 // Project
