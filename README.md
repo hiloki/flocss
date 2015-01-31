@@ -520,7 +520,7 @@ FLOCSSでは、後ろのレイヤーになるほど具体的になり、カス�
 }
 .p-category-nav:active,
 .p-category-nav.is-selected {
-  background-color: #FFFFFF:
+  background-color: #FFFFFF;
   background-image: none;
 }
 ```
