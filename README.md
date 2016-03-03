@@ -363,7 +363,7 @@ FLOCSSでは、後ろのレイヤーになるほど具体的になり、カス�
 // Component
 .c-media__image {
   float: left;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .p-profile > .c-media__image {
@@ -388,7 +388,7 @@ FLOCSSでは、後ろのレイヤーになるほど具体的になり、カス�
 // Component
 .c-media__image {
   float: left;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .p-profile__avatar {
@@ -411,7 +411,7 @@ FLOCSSでは、後ろのレイヤーになるほど具体的になり、カス�
 // Component
 .c-media__image {
   float: left;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .c-media__image--rev { // reverse
