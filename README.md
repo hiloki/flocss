@@ -1,4 +1,4 @@
-**FLOCSS（フロックス）**は、[OOCSS](https://github.com/stubbornella/oocss/wiki)や[SMACSS](https://smacss.com/ja)、[BEM](http://bem.info/)、[SuitCSS](http://suitcss.github.io/)のコンセプトを取り入れた、モジュラーなアプローチのためのCSS構成案です。  
+**FLOCSS（フロックス）** は、[OOCSS](https://github.com/stubbornella/oocss/wiki)や[SMACSS](https://smacss.com/ja)、[BEM](http://bem.info/)、[SuitCSS](http://suitcss.github.io/)のコンセプトを取り入れた、モジュラーなアプローチのためのCSS構成案です。  
 [MCSS](http://operatino.github.io/MCSS/ja/)のレイヤー構成にも大きな影響を受けています。
 
 ## 基本原則
