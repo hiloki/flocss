@@ -38,7 +38,7 @@ FLOCSSでは、グリッドフレームワークとしての定義、具体的�
 
 ```css
 // Foundation
-@mixin span-columns($coloums) {
+@mixin span-columns($columns) {
   ...
 }
 
@@ -99,7 +99,7 @@ Utilityは、Component、ProjectレイヤーのObjectを無尽蔵に増やして
 FLOCSSでは、オリジナルのBEMのシンタックスではなく、[MindBEMding](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 のアイデアを基本的にそのまま取り入れています。
 
-Modifierの命名の派生パターンとして、JavaScriptで操作されるような「状態」を表すようなModifierについては、SMACSSの**State**パターンの命名を拝借し、'is-*'プレフィックスを付与し、`.is-active`というようにすることもできます。
+Modifierの命名の派生パターンとして、JavaScriptで操作されるような「状態」を表すようなModifierについては、SMACSSの**State**パターンの命名を拝借し、`is-*`プレフィックスを付与し、`.is-active`というようにすることもできます。
 
 ```html
 <button class="c-button is-active">Save</button>
