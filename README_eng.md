@@ -1,9 +1,9 @@
 **FLOCSS** is a CSS architecture methodology that adopts concepts from [OOCSS](https://github.com/stubbornella/oocss/wiki),
- [SMACSS](https://smacss.com/), BEM](http://bem.info/) and [SuitCSS](http://suitcss.github.io/). It has also been heavily influenced by the layer structures of [MCSS](http://operatino.github.io/MCSS/). 
+ [SMACSS](https://smacss.com/), [BEM](http://bem.info/) and [SuitCSS](http://suitcss.github.io/). It has also been heavily influenced by the layer structures of [MCSS](http://operatino.github.io/MCSS/). 
 
 ## Basic Principles
 
-FLOCSS categorizes layers into the following 3 layers and 3 child layers of the  **Object** layer.
+FLOCSS categorizes layers into three layers and three child layers of the **Object** layer:
 
 1. Foundation - reset/normalize/base...
 2. Layout - header/main/sidebar/footer...
@@ -12,27 +12,26 @@ FLOCSS categorizes layers into the following 3 layers and 3 child layers of the 
    2. Project - articles/ranking/promo...
    3. Utility - clearfix/display/margin...
 
-In order to enhance reusability and scalability, we categorize our CSS using the above rule.
+In order to enhance reusability and scalability, we categorize our CSS using the above.
 
 ### Foundation
 
-The Foundation layer defines the defaults. It includes resetting browser stylings such as Reset.css and Normalize.css and defines some basic styling in the project. The background color and basic typography of the project should be included in this layer.
+The Foundation layer defines the defaults. This includes resetting browser stylings with [Reset.css](https://meyerweb.com/eric/tools/css/reset/reset.css) and [Normalize.css](https://necolas.github.io/normalize.css/) and defining basic styling. The background color and basic typography of the project should be included in this layer.
 
 ### Layout
 
-The layout layer defines the styles of large common containers such as the header area, main contents area, sidebar and footer that divides the page into large sections.
+The layout layer defines the styles of large common containers such as the header area, main contents area, sidebar and footer.
 
-Usually, elements defined in the layout layer is unique within each page. Thus, it is possible to use an ID selector on elements in the layout layer. However, since ID selectors have high specificity, using the prefix `.l-`or an attribute selector `[id="header"]` is recommended. 
+Usually, elements defined in the layout layer are unique within each page. Thus, it is possible to use an ID selector on elements. However, since ID selectors have high specificity, using the prefix `.l-`or an attribute selector `[id="header"]` is recommended. 
 
 *Note:*  
 The Layout layer in SMACSS includes CSS grid Layout modules. However, in FLOCSS, when defining the grid framework, or more specifically when defining functions or mixins for CSS preprocessors, it is recommended to include it in the Foundation layer as these may be included in other parts of your project. These could include frameworks that define layouts such as [Susy](http://susy.oddbird.net/)、[Bourbon Neat](http://neat.bourbon.io/) and [Kite](https://github.com/hiloki/kitecss).
 
-However, if defining these as classes, it is better to include them in the Object/Component layer. This way, it may be easier to apply more grid frameworks and more layouts to FLOCSS.
-(This may change according to CSS maintaining methods)
+However, if defining these as classes, it is better to include them in the Object/Component layer. This way, it may be easier to apply more grid frameworks and more layouts to FLOCSS (This may change according to CSS maintaining methods).
 
 ```css
 // Foundation
-@mixin span-columns($coloums) {
+@mixin span-columns($columns) {
   ...
 }
 
@@ -58,9 +57,9 @@ However, if defining these as classes, it is better to include them in the Objec
 
 ### Object
 
-Based on the concept of OOCSS, the Object layer define all visual patterns that repeat within a project.
+Based on the concept of OOCSS, the Object layer defines all visual patterns that repeat within a project.
 
-FLOCSS separates this Object layer into 3 sub-layers.
+FLOCCS objects are broken up into the following three layers.
 
 #### 1. Component
 
@@ -68,21 +67,21 @@ Defines small scale modules as patterns for re-use.
 
 This includes patterns commonly used such as `button` in the [Bootstrap Component category](http://getbootstrap.com/components/).
 
-Modules defined in this layer should have minimal styling. For example, try to avoid defining a set width or color in this layer.
+Modules defined in this layer should have minimal styling. For example, try to avoid defining a set width or color.
 
 #### 2. Project
 
-Defines a pattern that is unique to a project which consists of several components and other elements.
+Define patterns which are unique to the project which consists of several components and other elements.
 
-Elements that make up contents for your project comes under this layer, such as an article list, user profile, image gallery.
+Elements that make up contents for your project come under this layer, such as an article list, user profile, or image gallery.
 
 #### 3. Utility
 
-Utility classes define small and simple styles used to adjust minimal style changes that are difficult to or not appropriate to define in the Object modifiers of Component and Project layer.
+Utility classes define small and simple styles used to adjust minimal style changes that are difficult to or not appropriate to define in the Object modifiers of **Component** and **Project** layer.
 
-Utility classes can prevent Object modifiers in the Component and Project layer from increasing inexhaustibly. In addition, the Utility classes can be used to apply margins such as `.mbs{ margin-bottom: 10px; }` that the Object itself should not hold.
+Utility classes can prevent Object modifiers in the **Component** and **Project** layer from increasing inexhaustibly. In addition, Utility classes can be used to apply margins such as `.mbs { margin-bottom: 10px; }` that the Object itself should not hold.
 
-In addition, helper classes that define the rule sets such as the clearfix technique should also be included in this layer.
+In addition, helper classes that define the rule sets such as the `clearfix` technique should also be included in this layer.
 
 ## Naming Rules
 
@@ -92,7 +91,7 @@ FLOCSS adopts rules from [BEM](http://bem.info/) where naming is structured by c
 
 FLOCSS does not use an original BEM syntax. Instead, it follows the ideas of [MindBEMding](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
 
-Combining the **State** pattern from SMACSS, the 'is-*' prefix can be used as a modifier-style pattern to describe a state that may be controlled by JavaScript.
+Combining the **State** pattern from SMACSS, the `is-*` prefix can be used as a modifier-style pattern to describe a state that may be controlled by JavaScript.
 
 ```html
 <button class="c-button is-active">Save</button>
@@ -103,11 +102,11 @@ Combining the **State** pattern from SMACSS, the 'is-*' prefix can be used as a 
 .c-button.is-active { ... }
 ```
 
-During the use of this idea, the '.is-active' should not hold a style of itself. This is in order to prevent the '.is-active' style from interrupting with styles of other modifier modules.
+`.is-active` should not hold a style of itself. This is in order to prevent the `.is-active` style from interrupting with styles of other modifier modules.
 
 ### Namespacing of the Object
 
-In order to clarify the role of each module, it is advised to add a prefix to each module categorized within the object layer. 
+In order to clarify the role of each module, it is advised to add a prefix to each module categorized within the **Object** layer. 
 
 - Component - `.c-*`
 - Project   - `.p-*`
@@ -256,7 +255,7 @@ The example below uses Sass.
 
 Categorizing the above files using modules makes it easy to organize inserting and deleting page level and project level modules.
 
-All these files can be referred by one file such as `app.scss` and may look like below.
+All these files can be referred by one file such as `app.scss`:
 
 ```scss
 // ==========================================================================
@@ -318,7 +317,7 @@ FLOCSS structures its layers so that the latter layers have more specificity and
 
 ### Cascading layers and modules
 
-As a general rule it is **not acceptable** to cascade between different modules, and cascade using a parent selector from another module.
+As a general rule it is **not acceptable** to cascade between different modules, or cascading using a parent selector from another module.
 
 It is especially bad practice to cascade between modules in the same layer, such as the one below with several selectors.
 
@@ -340,9 +339,9 @@ It is especially bad practice to cascade between modules in the same layer, such
 }
 ```
 
-This rule exists so that each layer is independent of other modules. Thi way, developers are able to be reuse modules without worrying about unexpected behavior.
+This rule exists so that each layer is independent of other modules. This way, developers are able to be reuse modules without worrying about unexpected behavior.
 
-Cascading between layers is an exception. For example, **it is acceptable for the project layer module to make changes to the component layer modules** as shown below.
+Cascading between layers is an exception. For example, **it is acceptable for the project layer module to make changes to the component layer modules** as shown below:
 
 ```html
 <div class="p-profile c-media">
@@ -365,7 +364,7 @@ Cascading between layers is an exception. For example, **it is acceptable for th
 }
 ```
 
-However, in some cases the same result can be achieved without cascading selectors but by expanding the **Element** of the Project Layer or the **Modifier** of the Component Layer as shown below.
+However, in some cases the same result can be achieved without cascading selectors, but by expanding the Element of the **Project** Layer or the Modifier of the **Component** Layer as shown below.
 
 #### Element of the Project Layer
 
@@ -417,16 +416,16 @@ As shown above, one can avoid increasing specificity by these two methods.
 
 On the other hand, complicated designs with various patterns may flood the code with Elements and Modifiers.
 
-This could lead to the complication of your modules and may cause problems. In this case, it would be acceptable for the project layer module to cascade component layer modules.
+This could lead to the complication of your modules and may cause problems. In this case, it would be acceptable for the Project layer module to cascade Component layer modules.
 
-In cases like the one the above, one should impose the rules below.
+In cases like the one the above, one should impose the following rules:
 
-- In consideration of cases where the same component layer module is used multiple times across the project layer module, limit the scope of your CSS by using child selectors.
--  Limit the number of modules that have a different module as it's parent selector to one module.
+- In cases where the same component layer module is used multiple times across the project layer module, limit the scope of your CSS by using child selectors.
+-  Limit the number of modules that have a different module as its parent selector to one module.
 
 ### Cascading inside a module
 
-Unlike casicading across multiple layers or modules, it is **acceptable** to cascade within a module or use multiple selectors.
+Unlike cascading across multiple layers or modules, it is **acceptable** to cascade within a module or use multiple selectors.
 
 For example, the `Tabs` module may look as follows:
 
@@ -486,7 +485,7 @@ Even in the case above, it may be better to write as below for a more robust arc
 }
 ```
 
-Apart from this case, there may be cases where one may use the adjacent selctor `E + E {...}` to add borders to list modules or use the ":hover" pseudo-classes to add styles in different states.
+Apart from this case, there may be cases where one may use the adjacent selctor `E + E {...}` to add borders to list modules or use the `:hover` pseudo-classes to add styles in different states.
 In all the above cases, it is  **acceptable** to cascade within a module or use multiple selectors.
 
 ```html
@@ -526,7 +525,7 @@ The below are some examples of Extend that can be used.
 
 ### Extend that completes within a certain module
 
-Please refer to the button module below.
+Please refer to the `button` module below.
 
 ```scss
 .button {
@@ -543,7 +542,7 @@ Please refer to the button module below.
 <a href="#save" class="button button--primary">Save</a>
 ```
 
-In FLOCSS, one should use multi-class patterns like the above. However, one may use Extend to make this a single class pattern as shown below.
+In FLOCSS, one should use multi-class patterns like the one above. However, one may use Extend to make this a single class pattern as shown below.
 
 ```scss
 .button {
@@ -576,4 +575,4 @@ In FLOCSS, one should use multi-class patterns like the above. However, one may 
 <a href="#save" class="button--primary">Save</a>
 ```
 
-FLOCSS tolerated such cases as the above where an Extend completes within a module, as it rarely leads to complicated rules.
+FLOCSS tolerates such cases as the above where an Extend completes within a module, as it rarely leads to complicated rules.
