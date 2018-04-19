@@ -1,4 +1,5 @@
 **FLOCSS는, [OOCSS](https://github.com/stubbornella/oocss/wiki)와 [SMACSS](https://smacss.com/)、[BEM](http://bem.info/)、[SuitCSS](http://suitcss.github.io/)의 콘셉을 도입한 모듈러 접근을 위한 CSS 구성안입니다.
+
 [MCSS](http://operatino.github.io/MCSS/)의 레이어 구성에도 큰 영향을 받고 있습니다.
 
 ## 기본 원칙
@@ -16,8 +17,6 @@ FLOCSS은 다음의 3가지 레이어와 **Object**레이어의 자식 레이어
 
 ### Foundation
 
-Reset.cssやNormalize.cssなどを用いたブラウザのデフォルトスタイルの初期化や、プロジェクトにおける基本的なスタイルを定義します。
-ページの下地としての全体の背景や、基本的なタイポグラフィなどが該当します。
 Reset.css와 Normalize.css등에 사용된 브라우저의 디폴트 스타일의 초기화나 프로젝트 전반에 있어서 기본적인 스타일을 정의합니다.
 페이지의 밑바탕이 되는 전체의 배경이나 기본적인 타이포그래피 등이 해당됩니다.
 
@@ -104,8 +103,7 @@ Utility는 Component、Project 레이어의 Object를 무진장 늘어나는 것
 
 FLOCSS에는 오리지날의 BEM의 문법이 아닌 [MindBEMding](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)의 아이디어를 기본적으로 그대로 도입하고 있습니다.
 
-Modifierの命名の派生パターンとして、JavaScriptで操作されるような「状態」を表すようなModifierについては、SMACSSの**State**パターンの命名を拝借し、`is-*`プレフィックスを付与し、`.is-active`というようにすることもできます。
-Modifier의 네이밍의 파생 패턴으로, JavaScript로 조작되는 [상태]를 나타내는 Modifier에 대해서는 SMACSS의 **State** 패턴의 네이밍을 빌려, `is-*` 프리픽스를 넣어, `.is-active`같은 것도 가능합니다.
+Modifier의 네이밍의 파생 패턴으로, JavaScript로 조작되는 [상태]를 나타내는 Modifier에 대해서는 SMACSS의 **State** 패턴의 네이밍을 빌리고, `is-*` 프리픽스를 부여하고, `.is-active`같은 것도 가능합니다.
 
 ```html
 <button class="c-button is-active">Save</button>
@@ -116,27 +114,20 @@ Modifier의 네이밍의 파생 패턴으로, JavaScript로 조작되는 [상태
 .c-button.is-active { ... }
 ```
 
-このアイデアを採用する場合の原則として、`.is-active`そのものにルールを持たせるのは**禁止**します。これは`.is-active`そのものが持つルールが、
-他のモジュールのModifierのスタイルを汚染してしまうのを防ぐためです。
-이 아이디어를 사용하는 경우의 원칙으로 `.is-active` 란 곳에 룰을 가지게 하는 것은 **금지**합니다. 이것은 `.is-active` 그것이 가진 룰이 다른 모튤의 Modifier의 스타일을 지져분하게 하는 것을 방지하기 위함입니다.
+이 아이디어를 채용하는 경우의 원칙으로써 `.is-active` 란 곳에 룰을 가지게 하는 것은 **금지**합니다. 이것은 `.is-active` 그것이 가진 룰이 다른 모튤의 Modifier의 스타일을 지져분하게 하는 것을 방지하기 위함입니다.
 
-### Objectのプレフィックス
 ### Object의 프리픽스 
 
-Objectレイヤーの中で分類されるモジュールに対し、役割を明確にするためにプレフィックスをつけることを推奨します。
-Object 레이어 안에 분류된 모듈에 대해 역활을 명확하게 하기 위한 프리픽스를 붙히는 것을 추천합니다.
+Object 레이어 안에 분류된 모듈에 대해 역활을 명확하게 하기 위해서 프리픽스를 붙히는 것을 권장 합니다.
 - Component - `.c-*`
 - Project   - `.p-*`
 - Utility   - `.u-*`
 
 *Note:*  
-これらの命名規則は、あなたのプロジェクトが持つオリジナルの命名規則に従い、キャメルケースなどを組み合わせたものでも構いませんが、必ず**命名に一貫性を保つ**ようにしてください。
-이것을의 네이밍 규칙은, 당신의 프로젝트가 가진 오리지날의 네이밍 규칙에 따라, 카멜케이스 등에 따라가도 상관없습니다만 꼭 **네이밍에 일관성을 유지한다**로 해 주세요.
+이것을의 네이밍 규칙은, 당신의 프로젝트가 가진 오리지날의 네이밍 규칙에 따라, 카멜케이스 등에 따라가도 상관없습니다만 꼭 **네이밍에 일관성을 유지한다**로 부탁합니다.
 
-## ファイル・ディレクトリ構成
 ## 파일・디렉토리 구성
 
-基本原則のレイヤー構成に従い、下記のような構成を前提とします。
 기본 원칙의 레이어 구성에 따라 아래와 같이 구성을 전제하고 있습니다.
 
 ```css
