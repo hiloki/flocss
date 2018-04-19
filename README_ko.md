@@ -18,7 +18,6 @@ FLOCSS은 다음의 3가지 레이어와 **Object**레이어의 자식 레이어
 ### Foundation
 
 Reset.css와 Normalize.css등에 사용된 브라우저의 디폴트 스타일의 초기화나 프로젝트 전반에 있어서 기본적인 스타일을 정의합니다.
-
 페이지의 밑바탕이 되는 전체의 배경이나 기본적인 타이포그래피 등이 해당됩니다.
 
 
@@ -36,10 +35,11 @@ Reset.css와 Normalize.css등에 사용된 브라우저의 디폴트 스타일�
 SMACSS에 의한 Layout에는 그리드 레이아웃을 위한 모듈도 포함됩니다.
 
 FLOCSS에는 그리드 프레임 워크로 정의, 
-구체적으로는 CSS 프리 프로세서와 비슷한 mixin이나 function이 있는 경우는, 여러 곳에 include 될 것을 고려하고 그 Foundation 레이어로 다뤄야 한다고 생각하고 있습니다.
+구체적으로는 CSS 프리 프로세서와 비슷한 mixin이나 function이 있는 경우는, 여러 곳에 include 될 것을 고려해 그 Foundation 레이어로 다뤄야 한다고 생각하고 있습니다.
 예를 들어 그것들은 [Susy](http://susy.oddbird.net/)、[Bourbon Neat](http://neat.bourbon.io/)、[Kite](https://github.com/hiloki/kitecss)과 같은 레이아웃에 관한 프레임 워크입니다,
 
-그러나, 그것들을 클래스로 다룰 경우에는 그것들을 Object/Component 래아어로 정의시키는 쪽이 많은 레이아웃, 그리드 프레임워크를 FLOCSS에 적용시키기 쉽다고 생각합니다.
+그러나, 그것들을 클래스로 다룰 경우에는 그것들을 Object/Component 레이어로 정의시키는 쪽이 
+많은 레이아웃, 그리드 프레임워크를 FLOCSS에 적용시키기 쉽다고 생각합니다.
 (!운영중에 그 규칙이 변할 가능성이 큽니다!)
 
 ```css
