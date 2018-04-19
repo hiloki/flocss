@@ -1,7 +1,9 @@
 **FLOCSS（フロックス）** は、[OOCSS](https://github.com/stubbornella/oocss/wiki)や[SMACSS](https://smacss.com/ja)、[BEM](http://bem.info/)、[SuitCSS](http://suitcss.github.io/)のコンセプトを取り入れた、モジュラーなアプローチのためのCSS構成案です。  
 [MCSS](http://operatino.github.io/MCSS/ja/)のレイヤー構成にも大きな影響を受けています。
 
-**FLOCSS는, [OOCSS](https://github.com/stubbornella/oocss/wiki)와 SMACSS](https://smacss.com/ja)、[BEM](http://bem.info/)、[SuitCSS](http://suitcss.github.io/)의 콘셉을 넣어 모듈러 접근을 위한 CSS구성안입니다.
+**FLOCSS는, [OOCSS](https://github.com/stubbornella/oocss/wiki)와 [SMACSS](https://smacss.com/ja)、[BEM](http://bem.info/)、[SuitCSS](http://suitcss.github.io/)의 콘셉을 넣어 모듈러 접근을 위한 CSS구성안입니다.
+[MCSS](http://operatino.github.io/MCSS/ja/)의 레이어 구성에도 큰 영향을 주고 있습니다.
+
 ## 基本原則 기본 원칙
 FLOCSSは次の3つのレイヤーと、**Object**レイヤーの子レイヤーで構成されます。
 FLOCSS은 다음의 3가지 레이어와 **Object**레이어의 자식 레이어로 구성되어 있습니다.
