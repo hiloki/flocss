@@ -52,7 +52,6 @@ FLOCSS에는 그리드 프레임 워크로 정의,
 여러곳에 include 될것을 고려하고 그 Foundation 레이어로 다뤄야 한다고 생각하고 있습니다.
 예를 들어 그것들은 [Susy](http://susy.oddbird.net/)、[Bourbon Neat](http://neat.bourbon.io/)、[Kite](https://github.com/hiloki/kitecss)과 같은 레이아웃에 관한 프레임 워크입니다,
 
-SMACSS
 しかし、これらをクラスとして扱う場合には、それらは Object/Componentレイヤーとして定義させるほうが、多くのレイアウト、グリッドフレームワークをFLOCSSに適用させやすいと考えています。
 （!運用の中でこのルールが変わる可能性は大きいです！）
 그러나, 그것들을 클래스로 다룰 경우에는 그것들을 Object/Component 래아어로 정의시키는 쪽이 많은 레이아웃, 그리드 프레임워크를 FLOCSS에 적용시키기 쉽다고 생각합니다.
@@ -90,7 +89,7 @@ OOCSSのコンセプトを元に、プロジェクトにおける繰り返され
 OOCSS의 콘셉을 기본으로, 프로젝트 전반에 반복되는 비쥬얼 패턴을 모두 **Object**라고 정의합니다.
 
 FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます。
-FLOCSSで의 Object는, 게다가 다음의 세가지 레이어로 나눠집니다.
+FLOCSSで의 Object는, 추가로 다음의 세가지 레이어로 나눠집니다.
 
 #### 1. Component
 
@@ -101,7 +100,7 @@ FLOCSSで의 Object는, 게다가 다음의 세가지 레이어로 나눠집니�
 一般的によく使われるパターンであり、例えば[BootstrapのComponentカテゴリ](http://getbootstrap.com/components/)などに見られる`button`などが該当します。
 일반적으로 많이 사용되는 패턴이 있어 예를들어 [Bootstrap의 Component 카테고리](http://getbootstrap.com/components/) 등에 보여지는 `button`등이 해당됩니다. 
 出来る限り、最低限の機能を持ったものとして定義されるべきであり、それ自体が固有の幅や色などの特色を持つことは避けるのが望ましいです。
-가능한 최소의 기능으로 정의되어야 하고 그 자체가 고유의 폭과 색등의 특색을 지니는 것을 피하는것이 좋습니다.  
+가능한 최소의 기능으로 정의되어야 하고 그 자체가 고유의 폭이나 색등의 특색을 지니는 것은 피하는것이 좋습니다.  
 
 #### 2. Project
 
@@ -110,13 +109,17 @@ FLOCSSで의 Object는, 게다가 다음의 세가지 레이어로 나눠집니�
 
 例えば、記事一覧や、ユーザープロフィール、画像ギャラリーなどコンテンツを構成する要素などが該当します。
 예를 들어, 기사 리스트나 사용자 프로필, 이미지 갤러리 등의 콘텐츠를 구성하는 요소등이 해당됩니다. 
+
 #### 3. Utility
 
 ComponentとProjectレイヤーのObjectのモディファイアで解決することが難しい・適切では無い、わずかなスタイルの調整のための便利クラスなどを定義します。
+Component와 Project 레이어의 Object 모다퐈이어로 해결하는것이 어렵다・적절한게 없다, 소소한 스타일의 조정을 위한 편리한 클래스등을 정의합니다.
 
 Utilityは、Component、ProjectレイヤーのObjectを無尽蔵に増やしてしまうことを防いだり、またこれらのObject自体が持つべきではない`margin`の代わりに`.mbs { margin-bottom: 10px; }`のようなUtility Objectを用いて、隣接するモジュールとの間隔をつくるといった役割を担います。
+Utility는 Component、Project 레이어의 Object를 무진장 늘리는것을 방지하거나 또 이것의 Object 자체가 가지고 있지 않아야 할 `margin`의 대신에 `.mbs { margin-bottom: 10px; }`같은 Utility Object를 이용해, 적절한 모둘과의 간격을 만들겠다는 역활을 담당합니다.
 
 またclearfixテクニックのためのルールセットが定義されているヘルパークラスも、このレイヤーに含めます。
+또한 clearfix 테그닉을 위한 룰세트가 정의된 헬퍼 클래스도 이 레이어에 포함됩니다.
 
 ## 命名規則
 
